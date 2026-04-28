@@ -1,6 +1,10 @@
+import { Button } from "antd"
+
 function App() {
   return (
-    <div className='bg-red-500'>App</div>
+    <div className='bg-red-100'>
+      <Button type="primary">Button</Button>
+    </div>
   )
 }
 
