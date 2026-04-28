@@ -1,11 +1,7 @@
-import { Button } from 'antd';
+import { Routes } from './shared/configs';
 
 function App() {
-  return (
-    <div className="bg-red-100">
-      <Button type="primary">Button</Button>
-    </div>
-  );
+  return <Routes />;
 }
 
 export default App;
