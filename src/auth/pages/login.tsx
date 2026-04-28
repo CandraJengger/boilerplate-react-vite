@@ -1,5 +1,7 @@
 import { Button, Checkbox, Form, Input } from 'antd';
 import { useSubmittable } from '../../shared/hooks';
+import { useNavigate } from 'react-router';
+import { PAGE_PATH } from '../../shared/constants';
 
 type FieldType = {
   username?: string;
@@ -8,6 +10,8 @@ type FieldType = {
 };
 
 export function LoginPage() {
+  const navigate = useNavigate();
+
   const [form] = Form.useForm();
   const isValid = useSubmittable(form);
 
@@ -19,6 +23,7 @@ export function LoginPage() {
     }
 
     console.log(e);
+    navigate(PAGE_PATH.DASHBOARD);
   }
 
   return (
@@ -80,24 +85,6 @@ export function LoginPage() {
               </Button>
             </Form.Item>
           </Form>
-        </div>
-
-        <div className="text-center">
-          <small className="text-neutral-500">
-            If you can't log in, contact IT Help Desk at{' '}
-            <a
-              href="mailto:it.helpdesk@openRoadautogroup.com"
-              target="_blank"
-              className="text-primary"
-            >
-              it.helpdesk@openRoadautogroup.com
-            </a>{' '}
-            or{' '}
-            <a href="tel:6042325288" target="_blank" className="text-primary">
-              604-232-5288
-            </a>
-            .
-          </small>
         </div>
       </div>
     </div>
