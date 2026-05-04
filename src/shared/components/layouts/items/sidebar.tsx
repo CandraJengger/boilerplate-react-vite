@@ -1,8 +1,12 @@
 import { Button, Layout, Menu } from 'antd';
 import { useMemo } from 'react';
-import { useNavigate } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import { PAGE_PATH } from '../../../constants';
-import { DashboardOutlined, LogoutOutlined } from '@ant-design/icons';
+import {
+  DashboardOutlined,
+  LogoutOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 
 const { Sider } = Layout;
 
@@ -43,7 +47,12 @@ export function Sidebar({
       {
         key: 'dashboard',
         icon: <DashboardOutlined />,
-        label: 'Dashboard',
+        label: <NavLink to={PAGE_PATH.DASHBOARD}>Dashboard</NavLink>,
+      },
+      {
+        key: 'user-management',
+        icon: <UserOutlined />,
+        label: <NavLink to={PAGE_PATH.USER.LIST}>Users</NavLink>,
       },
     ],
     [],

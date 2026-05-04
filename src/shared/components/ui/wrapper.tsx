@@ -36,13 +36,13 @@ export function Wrapper({
         {breadcrumb?.items && (
           <Breadcrumb
             items={breadcrumb.items}
-            className="mb-5"
+            className="mb-6!"
             separator={<Separator />}
           />
         )}
         <div
           className={cn(
-            'flex flex-col md:flex-row justify-between items-start md:items-center  pb-4 mb-8 gap-4',
+            'flex flex-col md:flex-row justify-between items-start md:items-center  pb-4  mb-8 gap-4',
             hasDivider ? 'border-b border-b-neutral-200' : 'border-none',
           )}
         >

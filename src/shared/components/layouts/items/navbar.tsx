@@ -14,7 +14,7 @@ export function Navbar({ collapsed, onCollapse }: NavbarProps) {
   return (
     <Layout.Header
       style={{ background: colorBgContainer }}
-      className="flex lg:hidden items-center justify-between mx-4  gap-3 sticky top-0 z-[10] h-[44px] p-0 mb-4"
+      className="flex  items-center justify-between mx-4  gap-3 sticky top-0 z-[10] h-[44px] lg:h-[80px] p-0 mb-4"
     >
       <Button
         type="text"
