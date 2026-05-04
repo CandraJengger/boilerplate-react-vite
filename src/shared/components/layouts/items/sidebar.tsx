@@ -1,8 +1,12 @@
 import { Button, Layout, Menu } from 'antd';
 import { useMemo } from 'react';
-import { useNavigate } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import { PAGE_PATH } from '../../../constants';
-import { DashboardOutlined } from '@ant-design/icons';
+import {
+  DashboardOutlined,
+  LogoutOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 
 const { Sider } = Layout;
 
@@ -43,7 +47,12 @@ export function Sidebar({
       {
         key: 'dashboard',
         icon: <DashboardOutlined />,
-        label: 'Dashboard',
+        label: <NavLink to={PAGE_PATH.DASHBOARD}>Dashboard</NavLink>,
+      },
+      {
+        key: 'user-management',
+        icon: <UserOutlined />,
+        label: <NavLink to={PAGE_PATH.USER.LIST}>Users</NavLink>,
       },
     ],
     [],
@@ -51,10 +60,10 @@ export function Sidebar({
 
   const styles = isMobile
     ? {
-        ...fixedStyle,
+      ...fixedStyle,
 
-        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-      }
+      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+    }
     : fixedStyle;
 
   return (
@@ -68,7 +77,7 @@ export function Sidebar({
       onBreakpoint={(broken) => {
         setIsMobile?.(broken);
       }}
-      theme="light"
+      theme="dark"
       collapsed={collapsed}
       width={280}
       style={styles}
@@ -80,7 +89,7 @@ export function Sidebar({
           ) : (
             <div className="flex items-center justify-center pt-6"></div>
           )}
-          <Menu theme="light" mode="inline" items={items} />
+          <Menu theme="dark" mode="inline" items={items} />
         </div>
 
         {(!isMobile || !collapsed) && (
@@ -95,6 +104,7 @@ export function Sidebar({
             <Button
               variant="text"
               className="bg-neutral-100 border-none"
+              icon={<LogoutOutlined />}
               onClick={handleLogout}
             />
           </div>

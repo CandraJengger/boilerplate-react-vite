@@ -1,3 +1,9 @@
+import { Wrapper } from '../../shared/components/ui';
+
 export function DashboardPage() {
-  return <div>Dashboard</div>;
+  return (
+    <Wrapper title="Dashboard">
+      <div>Dashboard</div>
+    </Wrapper>
+  );
 }
